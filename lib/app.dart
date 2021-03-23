@@ -58,7 +58,7 @@ class _ReplyAppState extends State<ReplyApp> {
               ],
               supportedLocales: [
                 const Locale('en', ''),
-                const Locale('vi', 'vn'),
+                const Locale('vi', ''),
                 const Locale('th', ''),
               ],
             );
