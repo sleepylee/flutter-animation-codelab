@@ -1,0 +1,6 @@
+{
+  "titleInbox": "Inbox",
+  "@titleInbox": {
+    "description": "The title of the Inbox section"
+  }
+}

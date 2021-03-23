@@ -7,6 +7,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
 import 'package:reply/model/router_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'bottom_drawer.dart';
 import 'colors.dart';
@@ -405,7 +406,7 @@ class _AnimatedBottomAppBar extends StatelessWidget {
                                       child,
                                     ) {
                                       return Text(
-                                        currentlySelectedInbox,
+                                        getLocalizedTitle(currentlySelectedInbox, context),
                                         style: Theme.of(context)
                                             .textTheme
                                             .bodyText1
@@ -610,7 +611,7 @@ class _BottomDrawerDestinations extends StatelessWidget {
                         : ReplyColors.white50.withOpacity(0.64),
                   ),
                   title: Text(
-                    destination.name,
+                    getLocalizedTitle(destination.name, context),
                     style: theme.textTheme.bodyText2.copyWith(
                       color: destination.name == currentlySelectedInbox
                           ? theme.colorScheme.secondary
@@ -623,6 +624,13 @@ class _BottomDrawerDestinations extends StatelessWidget {
           ),
       ],
     );
+  }
+}
+
+String getLocalizedTitle(String title, BuildContext context) {
+  switch (title) {
+    case 'Inbox': return AppLocalizations.of(context).titleInbox;
+    default: return title;
   }
 }
 

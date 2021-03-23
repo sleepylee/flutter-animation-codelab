@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:reply/router.dart';
@@ -48,6 +50,17 @@ class _ReplyAppState extends State<ReplyApp> {
               title: 'Reply',
               darkTheme: _buildReplyDarkTheme(context),
               theme: _buildReplyLightTheme(context),
+              localizationsDelegates: [
+                AppLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: [
+                const Locale('en', ''),
+                const Locale('vi', ''),
+                const Locale('th', ''),
+              ],
             );
           }),
     );
